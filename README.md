@@ -1,19 +1,53 @@
-# 🎈 Blank app template
+# Urban Parking RAG App
 
-A simple Streamlit app template for you to modify!
+## Overview
+This repository contains a Streamlit-based decision-support application for urban parking analysis. The app is designed to combine spatial machine learning outputs with retrieval-augmented generation (RAG) so that users can explore parking imbalance patterns and receive source-grounded planning or policy guidance.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+The application is based on an urban parking use case developed from a master's research project focused on parking accessibility, spatial demand patterns, and decision support.
 
-### How to run it on your own machine
+## Project Goal
+The goal of this app is to make urban parking analysis more interpretable and actionable by connecting model outputs with relevant policy or planning documents through a simple interactive interface.
 
-1. Install the requirements
+## Core Features
+- interactive Streamlit interface
+- question-answering over parking and policy documents
+- retrieval of relevant planning or transport guidance
+- source-grounded responses using RAG
+- integration path for ML outputs and zone-level summaries
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+## Planned Workflow
+1. load parking-related policy and planning documents
+2. split and embed text into a searchable vector store
+3. retrieve relevant content based on user queries
+4. generate grounded answers with citations or referenced sources
+5. display responses in a Streamlit app
+6. optionally connect model outputs from the urban parking intelligence project
 
-2. Run the app
+## Tech Stack
+- Python
+- Streamlit
+- LangChain or LlamaIndex
+- Vector store such as FAISS or Chroma
+- OpenAI-compatible or local embeddings
+- Optional integration with spatial ML outputs
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+## Repository Structure
+```text
+urban-parking-rag-app/
+├── README.md
+├── requirements.txt
+├── streamlit_app.py
+├── data/
+│   ├── documents/
+│   └── processed/
+├── src/
+│   ├── load_docs.py
+│   ├── chunking.py
+│   ├── embed_store.py
+│   ├── retriever.py
+│   ├── generate.py
+│   └── utils.py
+├── outputs/
+│   └── screenshots/
+└── notebooks/
+    └── rag_experiments.ipynb
